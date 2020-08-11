@@ -231,7 +231,7 @@
         [self successAlert];
     }else{
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"JSON IS NOT VALIDATE!!";
+        alert.messageText = @"Json content is invalid!!!";
         [alert addButtonWithTitle:@"OK"];
         [alert setAlertStyle:NSAlertStyleWarning];
         [alert beginSheetModalForWindow:self.view.window completionHandler:nil];
