@@ -192,7 +192,7 @@
     
     if (ocObjcs.count>0) {
         NSAlert * alert = [[NSAlert alloc] init];
-        alert.messageText = @"This folder contains other Objective-C object files,would you clean them?";
+        alert.messageText = @"This folder contains other Objective-C files,are you going to clean them?";
         [alert addButtonWithTitle:@"Clean"];
         [alert addButtonWithTitle:@"Cancel"];
         [alert setAlertStyle:NSAlertStyleInformational];
