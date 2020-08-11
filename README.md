@@ -1,13 +1,27 @@
 # LZZJson2OCObject
-An macOS tool/app can transform json to Objective-C Entity Files（macOS工具，json转成Objective-C数据类型文件）。
+An macOS tool/app can transform json to Objective-C Entity Files
+
+macOS工具，json转成Objective-C数据类型文件，运行后直接输出.h和.m文件然后拖进工程，没错连你手动建立模型文件那一步都省掉了！！！
 
 
 
-两种使用方法：
+# 功能说明
 
-1.有个app文件，安装使用
+1. 仅支持OC，根据YYModel的使用，会自动识别有冲突的属性名，并用modelCustomPropertyMapper方法处理。
+2. 功能逐步完善中...
 
-2.使用xcode直接run就行了
+
+
+# 两种安装/使用方法：
+
+1. 有个app文件，直接安装使用
+2. 使用xcode直接run就行了
+
+
+
+
+
+# demo示例图
 
 
 
