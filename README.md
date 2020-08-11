@@ -25,8 +25,8 @@ macOS工具，json转成Objective-C数据类型文件，运行后直接输出.h�
 
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghmy09mx3aj30qo0om3zu.jpg)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/tmp/1.jpg)
 
 
 
-![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ghmy09vsf1j30qq0re3zg.jpg)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/tmp/2.jpg)
