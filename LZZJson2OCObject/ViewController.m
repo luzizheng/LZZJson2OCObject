@@ -18,12 +18,16 @@
 #define kStringF(str) str==nil?@"":[NSString stringWithFormat:@"%@",str]
 
 @interface ViewController()
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 
-@property (weak) IBOutlet NSTextField *tf;
-
-@property (weak) IBOutlet NSButton *pathBtn;
-@property (weak) IBOutlet NSTextField *commonPrefixTf;
 @property (weak) IBOutlet NSTextField *rootPreTf;
+@property (weak) IBOutlet NSTextField *commonPrefixTf;
+@property (weak) IBOutlet NSButton *pathBtn;
+
+
+//@property (weak) IBOutlet NSButton *pathBtn;
+//@property (weak) IBOutlet NSTextField *commonPrefixTf;
+//@property (weak) IBOutlet NSTextField *rootPreTf;
 
 
 @end
@@ -46,11 +50,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     
     NSString * jsonString = [[NSUserDefaults standardUserDefaults] valueForKey:@"json_string"];
     if (jsonString) {
-        self.tf.stringValue = jsonString;
+        self.textView.string = jsonString;
     }
     
     __weak typeof(self)weakSelf = self;
@@ -69,9 +73,9 @@
     if ([keyPath isEqualToString:kSel(dirPath)]) {
         NSString * path = [change objectForKey:NSKeyValueChangeNewKey];
         NSString * titleStr = kStrHasText(path)?@"Output Folder: ":@"Choose An Output Folder";
-        NSMutableAttributedString * btn_title = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:titleStr attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:13],NSForegroundColorAttributeName:[NSColor blueColor]}]];
+        NSMutableAttributedString * btn_title = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:titleStr attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:12],NSForegroundColorAttributeName:[NSColor blueColor]}]];
         if (kStrHasText(path)) {
-            [btn_title appendAttributedString:[[NSAttributedString alloc] initWithString:path attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:14],NSForegroundColorAttributeName:[NSColor redColor]}]];
+            [btn_title appendAttributedString:[[NSAttributedString alloc] initWithString:path attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:12],NSForegroundColorAttributeName:[NSColor redColor]}]];
         }
         [self.pathBtn setAttributedTitle:btn_title];
     } else if([keyPath isEqualToString:kSel(commonPrefix)]){
@@ -220,8 +224,8 @@
     if (dict) {
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:NULL];
         NSString *dataStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        self.tf.stringValue = dataStr;
-        kUserDefaultSave(self.tf.stringValue, @"json_string"); // 将这次合法的json保存好
+        self.textView.string = dataStr;
+        kUserDefaultSave(self.textView.string, @"json_string"); // 将这次合法的json保存好
     
         [JsonToModelTool parseRootJsonWithDict:dict];
         [self successAlert];
@@ -253,7 +257,7 @@
 // 检查json是否合法
 -(id)checkJsonValidate
 {
-    NSString * jsonString = self.tf.stringValue;
+    NSString * jsonString = self.textView.string;
     if (jsonString) {
         NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         if (jsonData) {
