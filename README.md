@@ -9,7 +9,7 @@ An macOS tool/app can transform json to Objective-C Entity Files!!!
 
 1. 仅支持OC，根据YYModel的使用，会自动识别有冲突的属性名，并用modelCustomPropertyMapper方法处理！！！
 2. json输入框友好，实时判断json是否合法！！！
-3. 生成的属性名支持自动注释！！！
+3. 根据生成的属性名自动翻译成中文注释！！！
 4. 功能逐步完善中！！！
 
 
