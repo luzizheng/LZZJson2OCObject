@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22AA2A95158D01850F81E3FF /* libPods-LZZJson2OCObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 761A19856FFF081F5AEE9DBB /* libPods-LZZJson2OCObject.a */; };
 		370AA82D24E13686005F7281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA82C24E13686005F7281 /* AppDelegate.m */; };
 		370AA83024E13686005F7281 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA82F24E13686005F7281 /* ViewController.m */; };
 		370AA83224E13686005F7281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 370AA83124E13686005F7281 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 		370AA83824E13686005F7281 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA83724E13686005F7281 /* main.m */; };
 		370AA84124E13FE7005F7281 /* SingleTonInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA84024E13FE7005F7281 /* SingleTonInfo.m */; };
 		370AA84424E14529005F7281 /* JsonToModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA84324E14529005F7281 /* JsonToModelTool.m */; };
+		374CEBB824E3D91000F32623 /* TranslateRootData.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBB724E3D91000F32623 /* TranslateRootData.m */; };
+		374CEBBB24E3DFAA00F32623 /* TranslateAnnotationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,18 @@
 		370AA84324E14529005F7281 /* JsonToModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonToModelTool.m; sourceTree = "<group>"; };
 		37168EC124E391AD0082C856 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
 		37168EC224E391CD0082C856 /* Marcro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marcro.h; sourceTree = "<group>"; };
+		374CEBAC24E3D31400F32623 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		374CEBAE24E3D32200F32623 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		374CEBB024E3D32E00F32623 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		374CEBB224E3D33800F32623 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		374CEBB424E3D34A00F32623 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		374CEBB624E3D91000F32623 /* TranslateRootData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TranslateRootData.h; sourceTree = "<group>"; };
+		374CEBB724E3D91000F32623 /* TranslateRootData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslateRootData.m; sourceTree = "<group>"; };
+		374CEBB924E3DFAA00F32623 /* TranslateAnnotationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslateAnnotationTool.h; sourceTree = "<group>"; };
+		374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslateAnnotationTool.m; sourceTree = "<group>"; };
+		743F53006293CB99EA5C2778 /* Pods-LZZJson2OCObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZZJson2OCObject.debug.xcconfig"; path = "Target Support Files/Pods-LZZJson2OCObject/Pods-LZZJson2OCObject.debug.xcconfig"; sourceTree = "<group>"; };
+		761A19856FFF081F5AEE9DBB /* libPods-LZZJson2OCObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZZJson2OCObject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E32D12542DE258C596AB3E59 /* Pods-LZZJson2OCObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZZJson2OCObject.release.xcconfig"; path = "Target Support Files/Pods-LZZJson2OCObject/Pods-LZZJson2OCObject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22AA2A95158D01850F81E3FF /* libPods-LZZJson2OCObject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +67,8 @@
 			children = (
 				370AA82A24E13686005F7281 /* LZZJson2OCObject */,
 				370AA82924E13686005F7281 /* Products */,
+				69BBD81E257B2A98C82B0856 /* Pods */,
+				BE6F14F10885434AACD9FDFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +91,10 @@
 				370AA84024E13FE7005F7281 /* SingleTonInfo.m */,
 				370AA84224E14529005F7281 /* JsonToModelTool.h */,
 				370AA84324E14529005F7281 /* JsonToModelTool.m */,
+				374CEBB924E3DFAA00F32623 /* TranslateAnnotationTool.h */,
+				374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */,
+				374CEBB624E3D91000F32623 /* TranslateRootData.h */,
+				374CEBB724E3D91000F32623 /* TranslateRootData.m */,
 				37168EC224E391CD0082C856 /* Marcro.h */,
 				37168EC124E391AD0082C856 /* PrefixHeader.h */,
 				370AA83124E13686005F7281 /* Assets.xcassets */,
@@ -84,6 +106,28 @@
 			path = LZZJson2OCObject;
 			sourceTree = "<group>";
 		};
+		69BBD81E257B2A98C82B0856 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				743F53006293CB99EA5C2778 /* Pods-LZZJson2OCObject.debug.xcconfig */,
+				E32D12542DE258C596AB3E59 /* Pods-LZZJson2OCObject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE6F14F10885434AACD9FDFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				374CEBB424E3D34A00F32623 /* libsqlite3.tbd */,
+				374CEBB224E3D33800F32623 /* libz.tbd */,
+				374CEBB024E3D32E00F32623 /* SystemConfiguration.framework */,
+				374CEBAE24E3D32200F32623 /* CoreTelephony.framework */,
+				374CEBAC24E3D31400F32623 /* AdSupport.framework */,
+				761A19856FFF081F5AEE9DBB /* libPods-LZZJson2OCObject.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,6 +135,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 370AA83C24E13686005F7281 /* Build configuration list for PBXNativeTarget "LZZJson2OCObject" */;
 			buildPhases = (
+				D93ED72334DA0EE11FB3FCA7 /* [CP] Check Pods Manifest.lock */,
 				370AA82424E13686005F7281 /* Sources */,
 				370AA82524E13686005F7281 /* Frameworks */,
 				370AA82624E13686005F7281 /* Resources */,
@@ -148,13 +193,40 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D93ED72334DA0EE11FB3FCA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LZZJson2OCObject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		370AA82424E13686005F7281 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				374CEBB824E3D91000F32623 /* TranslateRootData.m in Sources */,
 				370AA83024E13686005F7281 /* ViewController.m in Sources */,
 				370AA84124E13FE7005F7281 /* SingleTonInfo.m in Sources */,
+				374CEBBB24E3DFAA00F32623 /* TranslateAnnotationTool.m in Sources */,
 				370AA83824E13686005F7281 /* main.m in Sources */,
 				370AA84424E14529005F7281 /* JsonToModelTool.m in Sources */,
 				370AA82D24E13686005F7281 /* AppDelegate.m in Sources */,
@@ -286,6 +358,7 @@
 		};
 		370AA83D24E13686005F7281 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 743F53006293CB99EA5C2778 /* Pods-LZZJson2OCObject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LZZJson2OCObject/LZZJson2OCObject.entitlements;
@@ -300,6 +373,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LZZJson2OCObject/YoudaoSDK/libbase",
+					"$(PROJECT_DIR)/LZZJson2OCObject/YoudaoSDK/translateiOSSDK",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanchemm.Json2OCObject;
 				PRODUCT_NAME = "Json转OC实体";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -308,6 +387,7 @@
 		};
 		370AA83E24E13686005F7281 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E32D12542DE258C596AB3E59 /* Pods-LZZJson2OCObject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LZZJson2OCObject/LZZJson2OCObject.entitlements;
@@ -322,6 +402,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LZZJson2OCObject/YoudaoSDK/libbase",
+					"$(PROJECT_DIR)/LZZJson2OCObject/YoudaoSDK/translateiOSSDK",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wanchemm.Json2OCObject;
 				PRODUCT_NAME = "Json转OC实体";
 				PROVISIONING_PROFILE_SPECIFIER = "";

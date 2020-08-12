@@ -9,6 +9,7 @@
 #import "JsonToModelTool.h"
 #import <objc/runtime.h>
 
+#import "TranslateAnnotationTool.h"
 NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
 
 @implementation JsonToModelTool
@@ -121,24 +122,28 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
                 [containerProertyMapper setValue:entityClsName forKey:propertyName];
             }
         }
-        
         NSString * strA = [NSString stringWithFormat:@"/// %@\n@property(nonatomic,%@)%@ * %@;\n\n",thisKey,mod,defaultClsName,propertyName];
         [resultH appendString:strA];
         
     }
     NSString * headerStr = [self createHeaderFileWithClsName:className andPropertiesString:resultH andExtModelClassNames:otherClsName];
+    __block NSString * blockPath = [kDirPath stringByAppendingPathComponent:fileName_h];
+    [TranslateAnnotationTool translateAllHeaderContent:headerStr withCompletion:^(NSString * _Nonnull result) {
+        NSError * headErr = nil;
+        [result writeToURL:[NSURL fileURLWithPath:blockPath] atomically:YES encoding:NSUTF8StringEncoding error:&headErr];
+        if (headErr) {
+            NSLog(@"error : %@",headErr.description);
+            [[NSNotificationCenter defaultCenter] postNotificationName:NSParsingErrorNotification object:nil userInfo:@{NSLocalizedDescriptionKey:headErr.description}];
+        }
+    }];
+    
+    
     NSString * mStr = [self createImplementationFileWithClsName:className andPropertyMapper:propertyMapper andContainerPropertyGenericClassDict:containerProertyMapper];
-    NSError * headErr = nil;
-    [headerStr writeToURL:[NSURL fileURLWithPath:[kDirPath stringByAppendingPathComponent:fileName_h]] atomically:YES encoding:NSUTF8StringEncoding error:&headErr];
-    if (headErr) {
-        NSLog(@"error : %@",headErr.description);
-        [[NSNotificationCenter defaultCenter] postNotificationName:NSParsingErrorNotification object:nil userInfo:@{NSLocalizedDescriptionKey:headErr.description}];
-    }
     NSError * mError = nil;
     [mStr writeToURL:[NSURL fileURLWithPath:[kDirPath stringByAppendingPathComponent:fileName_m]] atomically:YES encoding:NSUTF8StringEncoding error:&mError];
     if (mError) {
         NSLog(@"error : %@",mError.description);
-        [[NSNotificationCenter defaultCenter] postNotificationName:NSParsingErrorNotification object:nil userInfo:@{NSLocalizedDescriptionKey:headErr.description}];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NSParsingErrorNotification object:nil userInfo:@{NSLocalizedDescriptionKey:mError.description}];
     }
     
 }

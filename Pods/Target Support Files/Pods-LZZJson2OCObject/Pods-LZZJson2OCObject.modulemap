@@ -1,0 +1,6 @@
+framework module Pods_LZZJson2OCObject {
+  umbrella header "Pods-LZZJson2OCObject-umbrella.h"
+
+  export *
+  module * { export * }
+}
