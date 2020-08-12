@@ -27,15 +27,15 @@ An macOS tool/app can transform json to Objective-C Entity Files!!!
 
 
 
-![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/a.jpg)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/a.png)
 
 
 
 # 运行输出文件
 
-![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/2.jpg)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/b.png)
 
-![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/3.png)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/c.png)
 
-![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/4.png)
+![](https://raw.githubusercontent.com/luzizheng/LZZJson2OCObject/master/img/d.png)
 
