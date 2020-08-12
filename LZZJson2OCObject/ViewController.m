@@ -7,15 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "SingleTonInfo.h"
 #import "JsonToModelTool.h"
-#import <Security/Security.h>
 
 
-#define NS_HAS_PERMISSION_ERROR(error) (error.code == NSFileReadNoPermissionError || error.code == NSFileWriteNoPermissionError)
 
-#define kStrHasText(str) (str!=nil && ![str isKindOfClass:[NSNull class]] && ![str isEqualToString:@""])
-#define kStringF(str) str==nil?@"":[NSString stringWithFormat:@"%@",str]
 
 @interface ViewController()
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
@@ -24,12 +19,7 @@
 @property (weak) IBOutlet NSTextField *commonPrefixTf;
 @property (weak) IBOutlet NSButton *pathBtn;
 
-
-//@property (weak) IBOutlet NSButton *pathBtn;
-//@property (weak) IBOutlet NSTextField *commonPrefixTf;
-//@property (weak) IBOutlet NSTextField *rootPreTf;
-
-
+@property (weak) IBOutlet NSView *bottomView;
 @end
 
 @implementation ViewController
@@ -39,10 +29,12 @@
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:kSel(dirPath)];
-    [self removeObserver:self forKeyPath:kSel(rootPrefix)];
-    [self removeObserver:self forKeyPath:kSel(commonPrefix)];
+    [[SingleTonInfo sharedInstance] removeObserver:self forKeyPath:kSel(dirPath)];
+    [[SingleTonInfo sharedInstance] removeObserver:self forKeyPath:kSel(rootPrefix)];
+    [[SingleTonInfo sharedInstance] removeObserver:self forKeyPath:kSel(commonPrefix)];
     
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSTextDidChangeNotification object:self.textView];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSControlTextDidChangeNotification object:self.commonPrefixTf];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSControlTextDidChangeNotification object:self.rootPreTf];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSParsingErrorNotification object:nil];
@@ -50,21 +42,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.bottomView.wantsLayer = YES;
+    self.bottomView.layer = [CALayer layer];
+    self.bottomView.layer.backgroundColor = [NSColor whiteColor].CGColor;
+    [self.bottomView setNeedsDisplay:YES];
 
+    // 禁用textview引号替换
+    self.textView.automaticQuoteSubstitutionEnabled = NO;
+    self.textView.enabledTextCheckingTypes = NO;
+    self.textView.font = [NSFont fontWithName:@"HelveticaNeue-Medium" size:16];
+    
     
     NSString * jsonString = [[NSUserDefaults standardUserDefaults] valueForKey:@"json_string"];
     if (jsonString) {
         self.textView.string = jsonString;
     }
     
+    
+    
     __weak typeof(self)weakSelf = self;
+
     [[SingleTonInfo sharedInstance] addObserver:weakSelf forKeyPath:kSel(dirPath) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:NULL];
     [[SingleTonInfo sharedInstance] addObserver:weakSelf forKeyPath:kSel(rootPrefix) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:NULL];
     [[SingleTonInfo sharedInstance] addObserver:weakSelf forKeyPath:kSel(commonPrefix) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:NULL];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(textViewEditDidChanged:) name:NSTextDidChangeNotification object:self.textView];
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(textFieldEditDidChanged:) name:NSControlTextDidChangeNotification object:self.commonPrefixTf];
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(textFieldEditDidChanged:) name:NSControlTextDidChangeNotification object:self.rootPreTf];
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(showErrorAlertAction:) name:NSParsingErrorNotification object:nil];
+
+    
 
 }
 
@@ -73,9 +82,9 @@
     if ([keyPath isEqualToString:kSel(dirPath)]) {
         NSString * path = [change objectForKey:NSKeyValueChangeNewKey];
         NSString * titleStr = kStrHasText(path)?@"Output Folder: ":@"Choose An Output Folder";
-        NSMutableAttributedString * btn_title = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:titleStr attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:12],NSForegroundColorAttributeName:[NSColor blueColor]}]];
+        NSMutableAttributedString * btn_title = [[NSMutableAttributedString alloc] initWithAttributedString:[[NSAttributedString alloc] initWithString:titleStr attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica-Light" size:12],NSForegroundColorAttributeName:kStrHasText(path)?[NSColor blueColor]:[NSColor lightGrayColor]}]];
         if (kStrHasText(path)) {
-            [btn_title appendAttributedString:[[NSAttributedString alloc] initWithString:path attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica" size:12],NSForegroundColorAttributeName:[NSColor redColor]}]];
+            [btn_title appendAttributedString:[[NSAttributedString alloc] initWithString:path attributes:@{NSFontAttributeName:[NSFont fontWithName:@"Helvetica-Light" size:12],NSForegroundColorAttributeName:[NSColor redColor]}]];
         }
         [self.pathBtn setAttributedTitle:btn_title];
     } else if([keyPath isEqualToString:kSel(commonPrefix)]){
@@ -85,6 +94,11 @@
     }else if([keyPath isEqualToString:kSel(rootPrefix)]){
         NSString * prefixStr = [change objectForKey:NSKeyValueChangeNewKey];
         self.rootPreTf.stringValue = prefixStr;
+    }else if([keyPath isEqualToString:kSel(string)]){
+        NSString * string = [change objectForKey:NSKeyValueChangeNewKey];
+        NSLog(@"%@",string);
+        
+        
     }else{
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -97,6 +111,14 @@
 }
 
 
+-(void)textViewEditDidChanged:(NSNotification *)sender
+{
+    if ([sender.object isEqual:self.textView]) {
+        NSTextView * tv = sender.object;
+        tv.textColor = [self checkJsonValidate:tv.string]?[NSColor systemGreenColor]:[NSColor systemRedColor];
+    }
+}
+
 -(void)textFieldEditDidChanged:(NSNotification *)sender
 {
     if ([sender.object isEqual:self.commonPrefixTf]) {
@@ -105,6 +127,7 @@
         [SingleTonInfo sharedInstance].rootPrefix = self.rootPreTf.stringValue;
     }
 }
+
 
 -(void)showErrorAlertAction:(NSNotification *)sender
 {
@@ -220,7 +243,7 @@
 // 确认一切正常后进行的数据解析
 -(void)saveToDirPath
 {
-    NSDictionary * dict = [self checkJsonValidate];
+    NSDictionary * dict = [self checkJsonValidate:self.textView.string];
     if (dict) {
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:NULL];
         NSString *dataStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
@@ -255,9 +278,8 @@
 
 
 // 检查json是否合法
--(id)checkJsonValidate
+-(id)checkJsonValidate:(NSString *)jsonString
 {
-    NSString * jsonString = self.textView.string;
     if (jsonString) {
         NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         if (jsonData) {

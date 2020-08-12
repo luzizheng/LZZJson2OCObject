@@ -9,9 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#define kSel(_x_) NSStringFromSelector(@selector(_x_))
-#define kUserDefaultSave(val,key) [[NSUserDefaults standardUserDefaults] setValue:val forKey:key];\
-[[NSUserDefaults standardUserDefaults] synchronize];
+
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,7 +7,6 @@
 //
 
 #import "JsonToModelTool.h"
-#import "SingleTonInfo.h"
 #import <objc/runtime.h>
 
 NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";

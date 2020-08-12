@@ -31,6 +31,8 @@
 		370AA84024E13FE7005F7281 /* SingleTonInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleTonInfo.m; sourceTree = "<group>"; };
 		370AA84224E14529005F7281 /* JsonToModelTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonToModelTool.h; sourceTree = "<group>"; };
 		370AA84324E14529005F7281 /* JsonToModelTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonToModelTool.m; sourceTree = "<group>"; };
+		37168EC124E391AD0082C856 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		37168EC224E391CD0082C856 /* Marcro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Marcro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,8 @@
 				370AA84024E13FE7005F7281 /* SingleTonInfo.m */,
 				370AA84224E14529005F7281 /* JsonToModelTool.h */,
 				370AA84324E14529005F7281 /* JsonToModelTool.m */,
+				37168EC224E391CD0082C856 /* Marcro.h */,
+				37168EC124E391AD0082C856 /* PrefixHeader.h */,
 				370AA83124E13686005F7281 /* Assets.xcassets */,
 				370AA83324E13686005F7281 /* Main.storyboard */,
 				370AA83624E13686005F7281 /* Info.plist */,
@@ -290,6 +294,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LZZJson2OCObject/PrefixHeader.h";
 				INFOPLIST_FILE = LZZJson2OCObject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +316,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/LZZJson2OCObject/PrefixHeader.h";
 				INFOPLIST_FILE = LZZJson2OCObject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
