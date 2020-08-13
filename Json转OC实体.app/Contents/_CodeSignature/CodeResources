@@ -10,23 +10,23 @@
 		</data>
 		<key>Resources/Assets.car</key>
 		<data>
-		pZhYslMXwDaq2gncsm9vuBsFxqU=
+		N5xPq98flMpQvxWKs2v9Xv49cXU=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
-		eJ+8AqWcYgVmFIi610ER5tTq6pI=
+		QH3tpr0XeESFAh9eYE+wolL+8zE=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/MainMenu.nib</key>
 		<data>
-		7t6Y/J62tzGnhFQqniOQXj+Snmo=
-		</data>
-		<key>Resources/Base.lproj/Main.storyboardc/NSWindowController-B8D-0N-5wS.nib</key>
-		<data>
-		eSV3y+QiwRjyWgOTk8E7hUTdRgE=
+		dj1k/4uznPmqoFXUzAw3+1u6B8M=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/XfG-lQ-9wD-view-q7Y-vf-fr3.nib</key>
 		<data>
-		70ZucRWhHwO54r1YSbTelI95mak=
+		ImrMuqRvQWtako3wtPvFXJJW5oA=
+		</data>
+		<key>Resources/Base.lproj/Main.storyboardc/root_window.nib</key>
+		<data>
+		c67EoPxDBKOv2OHtKMURNz/RNl8=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -46,55 +46,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pZhYslMXwDaq2gncsm9vuBsFxqU=
+			N5xPq98flMpQvxWKs2v9Xv49cXU=
 			</data>
 			<key>hash2</key>
 			<data>
-			i1D+f0CwaxN0v+tIPpJgMIICPembVXkSRBQjVBWG9+I=
+			OqDLyfee7VUrxBDM6FIBBSJd/G0I9q33g7DCHgTjn5U=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eJ+8AqWcYgVmFIi610ER5tTq6pI=
+			QH3tpr0XeESFAh9eYE+wolL+8zE=
 			</data>
 			<key>hash2</key>
 			<data>
-			j5r320jv/SwzJK8NwxwLDHEANEKZgNjpNXCwtUdaeyM=
+			zVgytDGWHMazQ3rLqguy78Jfrf3widHQbE+ryNYVCt4=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/MainMenu.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7t6Y/J62tzGnhFQqniOQXj+Snmo=
+			dj1k/4uznPmqoFXUzAw3+1u6B8M=
 			</data>
 			<key>hash2</key>
 			<data>
-			DEOxxstTre6qLy8yP9iX0pQlno7k4mTEx7KLmrEXWI0=
-			</data>
-		</dict>
-		<key>Resources/Base.lproj/Main.storyboardc/NSWindowController-B8D-0N-5wS.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			eSV3y+QiwRjyWgOTk8E7hUTdRgE=
-			</data>
-			<key>hash2</key>
-			<data>
-			nM1FiP6937u1YDrL/xf9U68A1BfrghFY5SCETDoxhvU=
+			yBwmueAMZH2Gi7Co4sNFaMQD0CXD1XNtXFOCw8vkLm4=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/XfG-lQ-9wD-view-q7Y-vf-fr3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			70ZucRWhHwO54r1YSbTelI95mak=
+			ImrMuqRvQWtako3wtPvFXJJW5oA=
 			</data>
 			<key>hash2</key>
 			<data>
-			hVdl1p62TKuWIn/ryPprC8eyvgcYLkBKsmE4zTR7Aa8=
+			0xQJ5aPmgmr3MQLOjwYQZgnFMuTxba8oqMiM+L9eWXI=
+			</data>
+		</dict>
+		<key>Resources/Base.lproj/Main.storyboardc/root_window.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			c67EoPxDBKOv2OHtKMURNz/RNl8=
+			</data>
+			<key>hash2</key>
+			<data>
+			x8qg8Z5cvvGP+iJv8hC76SR/u2JaL3psEpTOHwKmO28=
 			</data>
 		</dict>
 	</dict>

@@ -18,7 +18,7 @@
     // Insert code here to initialize your application
     
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-
+    
 }
 
 
@@ -26,5 +26,15 @@
     // Insert code here to tear down your application
 }
 
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)sender hasVisibleWindows:(BOOL)flag
+{
+    if (flag) {
+        return NO;
+    }else{
+        NSWindowController * wc = [[NSStoryboard storyboardWithName:@"Main" bundle:nil] instantiateControllerWithIdentifier:@"root_window"];
+        [wc.window makeKeyAndOrderFront:self];
+        return YES;
+    }
+}
 
 @end
