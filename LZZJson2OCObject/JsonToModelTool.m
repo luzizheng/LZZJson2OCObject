@@ -117,7 +117,18 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
                 NSString * tailCha = [propertyName substringFromIndex:1];
                 NSString * entityClsName = [NSString stringWithFormat:@"%@%@%@Item",kCommonPrefix,[firstCha uppercaseString],tailCha];
                 [otherClsName addObject:entityClsName];
-                [self createNewModelWithJson:firstItem andModelClassName:entityClsName];
+                
+                // 因为数组里面的字典元素，可能每个的属性数量不同，所以要创造一个字典包含所有属性的
+                NSMutableDictionary * hole_dict = [NSMutableDictionary dictionaryWithDictionary:firstItem];
+                for (NSDictionary * each_item in array) {
+                    for (NSString * key_n in each_item.allKeys) {
+                        if ([hole_dict.allKeys containsObject:key_n] == NO) {
+                            [hole_dict setValue:each_item[key_n] forKey:key_n];
+                        }
+                    }
+                }
+                
+                [self createNewModelWithJson:hole_dict andModelClassName:entityClsName];
                 defaultClsName = [NSString stringWithFormat:@"NSArray <%@ *>",entityClsName];
                 [containerProertyMapper setValue:entityClsName forKey:propertyName];
             }
