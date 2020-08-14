@@ -43,8 +43,9 @@
         dispatch_group_enter(group);
         dispatch_async(globalQueue,^{
             
+            NSString * word = [kStringF(thisKey) stringByReplacingOccurrencesOfString:@"_" withString:@" "];
             NSString * translateApi = @"http://fanyi.youdao.com/translate";
-            NSDictionary * params = @{@"doctype":@"json",@"type":@"EN2ZH_CN",@"i":kStringF(thisKey)};
+            NSDictionary * params = @{@"doctype":@"json",@"type":@"EN2ZH_CN",@"i":word};
             AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
             manager.requestSerializer = [AFHTTPRequestSerializer serializer];
             manager.responseSerializer = [AFJSONResponseSerializer serializer];
