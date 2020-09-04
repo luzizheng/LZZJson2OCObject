@@ -23,3 +23,4 @@
 
 #define kStrHasText(str) (str!=nil && ![str isKindOfClass:[NSNull class]] && ![str isEqualToString:@""])
 #define kStringF(str) str==nil?@"":[NSString stringWithFormat:@"%@",str]
+#define kGetSizeFit(view)  [view sizeThatFits:NSMakeSize(CGFLOAT_MAX, CGFLOAT_MAX)]

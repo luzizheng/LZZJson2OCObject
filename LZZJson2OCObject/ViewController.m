@@ -72,9 +72,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(textFieldEditDidChanged:) name:NSControlTextDidChangeNotification object:self.commonPrefixTf];
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(textFieldEditDidChanged:) name:NSControlTextDidChangeNotification object:self.rootPreTf];
     [[NSNotificationCenter defaultCenter] addObserver:weakSelf selector:@selector(showErrorAlertAction:) name:NSParsingErrorNotification object:nil];
-
-    
-
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context

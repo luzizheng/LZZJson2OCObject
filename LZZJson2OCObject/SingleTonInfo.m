@@ -7,8 +7,7 @@
 //
 
 #import "SingleTonInfo.h"
-
-
+#import <Cocoa/Cocoa.h>
 
 @implementation SingleTonInfo
 @synthesize commonPrefix = _commonPrefix;
@@ -56,6 +55,15 @@
     if (rootPre) {
         self.rootPrefix = rootPre;
     }
+    
+    id modelType = [ud valueForKey:kSel(modelType)];
+    if (modelType) {
+        self.modelType = [modelType integerValue];
+    }else{
+        self.modelType = ModelType_YY;
+    }
+    
+    
 }
 
 
@@ -74,7 +82,14 @@
 - (void)setRootPrefix:(NSString *)rootPrefix
 {
     _rootPrefix = rootPrefix;
-    kUserDefaultSave(rootPrefix, rootPrefix);
+    kUserDefaultSave(rootPrefix, kSel(rootPrefix));
+}
+
+- (void)setModelType:(ModelType)modelType
+{
+    _modelType = modelType;
+    kUserDefaultSave(@(modelType), kSel(modelType));    
+    
 }
 
 - (NSString *)commonPrefix

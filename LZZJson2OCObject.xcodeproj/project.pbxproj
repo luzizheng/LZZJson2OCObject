@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004153032501DF0900BCED42 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004153022501DF0900BCED42 /* MainWindowController.m */; };
 		22AA2A95158D01850F81E3FF /* libPods-LZZJson2OCObject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 761A19856FFF081F5AEE9DBB /* libPods-LZZJson2OCObject.a */; };
 		370AA82D24E13686005F7281 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA82C24E13686005F7281 /* AppDelegate.m */; };
 		370AA83024E13686005F7281 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA82F24E13686005F7281 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004153012501DF0900BCED42 /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		004153022501DF0900BCED42 /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
 		370AA82824E13686005F7281 /* Json转OC实体.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Json转OC实体.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		370AA82B24E13686005F7281 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		370AA82C24E13686005F7281 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 			children = (
 				370AA82B24E13686005F7281 /* AppDelegate.h */,
 				370AA82C24E13686005F7281 /* AppDelegate.m */,
+				004153012501DF0900BCED42 /* MainWindowController.h */,
+				004153022501DF0900BCED42 /* MainWindowController.m */,
 				370AA82E24E13686005F7281 /* ViewController.h */,
 				370AA82F24E13686005F7281 /* ViewController.m */,
 				370AA83F24E13FE7005F7281 /* SingleTonInfo.h */,
@@ -225,6 +230,7 @@
 			files = (
 				374CEBB824E3D91000F32623 /* TranslateRootData.m in Sources */,
 				370AA83024E13686005F7281 /* ViewController.m in Sources */,
+				004153032501DF0900BCED42 /* MainWindowController.m in Sources */,
 				370AA84124E13FE7005F7281 /* SingleTonInfo.m in Sources */,
 				374CEBBB24E3DFAA00F32623 /* TranslateAnnotationTool.m in Sources */,
 				370AA83824E13686005F7281 /* main.m in Sources */,

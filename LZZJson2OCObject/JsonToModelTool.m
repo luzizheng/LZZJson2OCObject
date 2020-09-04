@@ -185,7 +185,12 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
     
     // modelCustomPropertyMapper
     if(propertyMapper.allKeys.count>0){
-        [result appendString:@"\n+(NSDictionary *)modelCustomPropertyMapper\n{\n    return @{"];
+        if ([SingleTonInfo sharedInstance].modelType == ModelType_YY) {
+            [result appendString:@"\n+(NSDictionary *)modelCustomPropertyMapper\n{\n    return @{"];
+        }else if ([SingleTonInfo sharedInstance].modelType == ModelType_MJ){
+            [result appendString:@"\n+(NSDictionary *)mj_replacedKeyFromPropertyName\n{\n    return @{"];
+        }
+        
         NSArray * allKeys = propertyMapper.allKeys;
         if(allKeys.count == 1){
             NSString * key = [allKeys firstObject];
@@ -207,12 +212,22 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
     
     // modelContainerPropertyGenericClass
     if(containerPropertyGenericClassDict.allKeys.count>0){
-        [result appendString:@"\n+(NSDictionary *)modelContainerPropertyGenericClass\n{\n    return @{"];
+        
+        if ([SingleTonInfo sharedInstance].modelType == ModelType_YY) {
+            [result appendString:@"\n+(NSDictionary *)modelContainerPropertyGenericClass\n{\n    return @{"];
+        }else if ([SingleTonInfo sharedInstance].modelType == ModelType_MJ){
+            [result appendString:@"\n+(NSDictionary *)mj_objectClassInArray\n{\n    return @{"];
+        }
         NSArray * allKeys = containerPropertyGenericClassDict.allKeys;
         if(allKeys.count == 1){
             NSString * key = [allKeys firstObject];
             NSString * val = containerPropertyGenericClassDict[key];
-            [result appendFormat:@"@\"%@\" : [%@ class]};\n}\n",key,val];
+            
+            if ([SingleTonInfo sharedInstance].modelType == ModelType_YY) {
+                [result appendFormat:@"@\"%@\" : [%@ class]};\n}\n",key,val];
+            }else if ([SingleTonInfo sharedInstance].modelType == ModelType_MJ){
+                [result appendFormat:@"@\"%@\" : @\"%@\"};\n}\n",key,val];
+            }
         }else{
             for(int i = 0;i<allKeys.count;i++){
                 NSString * key = allKeys[i];

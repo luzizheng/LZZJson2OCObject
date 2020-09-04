@@ -13,10 +13,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger,ModelType) {
+    ModelType_YY = 0,
+    ModelType_MJ
+};
+
 @interface SingleTonInfo : NSObject
 @property(nonatomic,copy)NSString * rootPrefix;
 @property(nonatomic,copy)NSString * commonPrefix;
 @property(nonatomic,copy)NSString * dirPath;
+@property(nonatomic,assign)ModelType modelType;
 
 + (instancetype)sharedInstance;
 
