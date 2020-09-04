@@ -162,6 +162,11 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
 +(NSString *)createHeaderFileWithClsName:(NSString *)clsName andPropertiesString:(NSString *)propertiesString andExtModelClassNames:(NSArray *)otherModelClsNames
 {
     NSMutableString * result = [[NSMutableString alloc] init];
+    NSString * date = kGetTimeWithFormat(@"yyyy/MM/dd");
+    NSString * targetName = kAppName;
+    NSString * link = kGitHubLink;
+    NSString * copyRight = kGetCopyRightDescription();
+    [result appendFormat:@"//\n//  %@.h\n//  %@\n//  %@\n//\n//  Created by %@ App on %@.\n//  %@\n//\n\n",clsName,targetName,link,targetName,date,copyRight];
     [result appendString:@"#import <Foundation/Foundation.h>\n"];
     for(NSString * other in otherModelClsNames){
         NSString * line = [NSString stringWithFormat:@"#import \"%@.h\"\n",other];
@@ -179,6 +184,11 @@ NSString * const NSParsingErrorNotification = @"NSParsingErrorNotification";
 +(NSString *)createImplementationFileWithClsName:(NSString *)clsName andPropertyMapper:(NSDictionary *)propertyMapper andContainerPropertyGenericClassDict:(NSDictionary *)containerPropertyGenericClassDict
 {
     NSMutableString * result = [[NSMutableString alloc] init];
+    NSString * date = kGetTimeWithFormat(@"yyyy/MM/dd");
+    NSString * targetName = kAppName;
+    NSString * link = kGitHubLink;
+    NSString * copyRight = kGetCopyRightDescription();
+    [result appendFormat:@"//\n//  %@.m\n//  %@\n//  %@\n//\n//  Created by %@ App on %@.\n//  %@\n//\n\n",clsName,targetName,link,targetName,date,copyRight];
     
     [result appendFormat:@"#import \"%@.h\"\n",clsName];
     [result appendFormat:@"@implementation %@\n",clsName];

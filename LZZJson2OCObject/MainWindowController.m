@@ -2,7 +2,7 @@
 //  MainWindowController.m
 //  LZZJson2OCObject
 //
-//  Created by luzizheng on 2020/9/4.
+//  Created by https://github.com/luzizheng/LZZJson2OCObject on 2020/9/4.
 //  Copyright © 2020 Chemm. All rights reserved.
 //
 
