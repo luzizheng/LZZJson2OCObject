@@ -18,6 +18,7 @@
 		370AA84424E14529005F7281 /* JsonToModelTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 370AA84324E14529005F7281 /* JsonToModelTool.m */; };
 		374CEBB824E3D91000F32623 /* TranslateRootData.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBB724E3D91000F32623 /* TranslateRootData.m */; };
 		374CEBBB24E3DFAA00F32623 /* TranslateAnnotationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */; };
+		68618E7D2509F42600313096 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 68618E7C2509F42600313096 /* NSString+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		374CEBB724E3D91000F32623 /* TranslateRootData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TranslateRootData.m; sourceTree = "<group>"; };
 		374CEBB924E3DFAA00F32623 /* TranslateAnnotationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TranslateAnnotationTool.h; sourceTree = "<group>"; };
 		374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslateAnnotationTool.m; sourceTree = "<group>"; };
+		68618E7B2509F42600313096 /* NSString+Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		68618E7C2509F42600313096 /* NSString+Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 		743F53006293CB99EA5C2778 /* Pods-LZZJson2OCObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZZJson2OCObject.debug.xcconfig"; path = "Target Support Files/Pods-LZZJson2OCObject/Pods-LZZJson2OCObject.debug.xcconfig"; sourceTree = "<group>"; };
 		761A19856FFF081F5AEE9DBB /* libPods-LZZJson2OCObject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LZZJson2OCObject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32D12542DE258C596AB3E59 /* Pods-LZZJson2OCObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZZJson2OCObject.release.xcconfig"; path = "Target Support Files/Pods-LZZJson2OCObject/Pods-LZZJson2OCObject.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				374CEBBA24E3DFAA00F32623 /* TranslateAnnotationTool.m */,
 				374CEBB624E3D91000F32623 /* TranslateRootData.h */,
 				374CEBB724E3D91000F32623 /* TranslateRootData.m */,
+				68618E7B2509F42600313096 /* NSString+Utils.h */,
+				68618E7C2509F42600313096 /* NSString+Utils.m */,
 				37168EC224E391CD0082C856 /* Marcro.h */,
 				37168EC124E391AD0082C856 /* PrefixHeader.h */,
 				370AA83124E13686005F7281 /* Assets.xcassets */,
@@ -232,6 +237,7 @@
 				370AA83024E13686005F7281 /* ViewController.m in Sources */,
 				004153032501DF0900BCED42 /* MainWindowController.m in Sources */,
 				370AA84124E13FE7005F7281 /* SingleTonInfo.m in Sources */,
+				68618E7D2509F42600313096 /* NSString+Utils.m in Sources */,
 				374CEBBB24E3DFAA00F32623 /* TranslateAnnotationTool.m in Sources */,
 				370AA83824E13686005F7281 /* main.m in Sources */,
 				370AA84424E14529005F7281 /* JsonToModelTool.m in Sources */,

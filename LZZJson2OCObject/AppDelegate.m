@@ -26,6 +26,7 @@
     
     [[SingleTonInfo sharedInstance] addObserver:self forKeyPath:kSel(modelType) options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew context:nil];
     
+    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

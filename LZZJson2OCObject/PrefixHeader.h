@@ -17,4 +17,5 @@
 #import <YYModel/YYModel.h>
 #import "SingleTonInfo.h"
 #import "Marcro.h"
+#import "NSString+Utils.h"
 
